@@ -15,6 +15,8 @@ class FilmService:
             return self.filter_by_genre(data.get('genre_id'))
         if data.get('year'):
             return self.filter_by_year(data.get('year'))
+        else:
+            return self.get_all()
 
     def get_one(self, fid):
         film = self.dao.get_one(fid)
